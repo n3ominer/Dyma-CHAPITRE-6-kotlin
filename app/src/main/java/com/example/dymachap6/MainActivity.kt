@@ -33,14 +33,6 @@ class MainActivity : AppCompatActivity(), FragmentTransactionHandler {
         fragmanetTransaction.commit()
     }
 
-    private fun addFragment2ToActivity() {
-        val fragmentManager = supportFragmentManager
-
-        val fragmanetTransaction = fragmentManager.beginTransaction()
-        fragmanetTransaction.add(R.id.main_activity_fragment_container_1, MyFragment2(), "MY_FRAGMENT_2")
-        fragmanetTransaction.commit()
-    }
-
     private fun replaceFragment(fragmentToReplace: Fragment) {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.main_activity_fragment_container_1, fragmentToReplace)
