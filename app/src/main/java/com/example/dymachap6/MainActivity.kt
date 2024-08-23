@@ -5,22 +5,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupActionBarWithNavController
 
 class MainActivity : AppCompatActivity(), FragmentTransactionHandler {
 
     lateinit var textView1: TextView
-    lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +24,6 @@ class MainActivity : AppCompatActivity(), FragmentTransactionHandler {
             }
         }
         this.addFragment1ToActivity()
-        this.addFragment3ToActivity()
     }
     private fun addFragment1ToActivity() {
         val fragmentManager = supportFragmentManager
@@ -44,11 +33,11 @@ class MainActivity : AppCompatActivity(), FragmentTransactionHandler {
         fragmanetTransaction.commit()
     }
 
-    private fun addFragment3ToActivity() {
+    private fun addFragment2ToActivity() {
         val fragmentManager = supportFragmentManager
 
         val fragmanetTransaction = fragmentManager.beginTransaction()
-        fragmanetTransaction.add(R.id.main_activity_fragment_container_2, MyFragment3(), "MY_FRAGMENT_3")
+        fragmanetTransaction.add(R.id.main_activity_fragment_container_1, MyFragment2(), "MY_FRAGMENT_2")
         fragmanetTransaction.commit()
     }
 
