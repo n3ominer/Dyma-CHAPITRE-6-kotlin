@@ -3,12 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyFragment4">
+    tools:context=".MyFragment4"
+    android:background="@color/red">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/fragment4_center_tv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="Fragment 3" />
 
 </FrameLayout>

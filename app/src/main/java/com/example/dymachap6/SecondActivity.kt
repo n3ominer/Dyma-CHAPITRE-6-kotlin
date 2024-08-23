@@ -1,22 +1,27 @@
 package com.example.dymachap6
 
-import android.net.Uri
 import android.os.Bundle
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
 
 class SecondActivity : AppCompatActivity() {
+
+    lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_second)
 
-        val action: String? = intent?.action
-        val data: Uri? = intent?.data
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment
+        this.navController = navHostFragment.navController
+        setupActionBarWithNavController(this.navController)
+    }
 
-        Toast.makeText(this, data.toString(), Toast.LENGTH_LONG).show()
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }

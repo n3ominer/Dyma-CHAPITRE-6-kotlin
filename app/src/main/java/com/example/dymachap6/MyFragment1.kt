@@ -1,5 +1,7 @@
 package com.example.dymachap6
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -34,6 +36,10 @@ class MyFragment1 : Fragment() {
             fragmentTransactionHandler.fragmentBtnClickHandle(MyFragment2.newInstance(fragmentTransactionHandler))
 
             (activity as MainActivity).getDataFromFragment1("Hello from fragment !")
+            val intent = Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse("http://nav.frag.3.dyma/path")
+            }
+            startActivity(intent)
         }
 
         return view

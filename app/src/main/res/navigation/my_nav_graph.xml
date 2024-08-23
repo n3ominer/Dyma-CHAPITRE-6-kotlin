@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:id="@+id/my_nav_graph">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav_graph"
+    app:startDestination="@id/myFragment3">
 
+    <fragment
+        android:id="@+id/myFragment3"
+        android:name="com.example.dymachap6.MyFragment3"
+        android:label="Fragment 3"
+        tools:layout="@layout/fragment_my3">
+        <action
+            android:id="@+id/navigateFromMyFragment3ToMyFragment4"
+            app:destination="@id/myFragment4"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+        <deepLink
+            android:id="@+id/deepLink2"
+            app:uri="http://com.example.dymachap6/path"/>
+    </fragment>
+    <fragment
+        android:id="@+id/myFragment4"
+        android:name="com.example.dymachap6.MyFragment4"
+        android:label="Fragment 4"
+        tools:layout="@layout/fragment_my4">
+        <action
+            android:id="@+id/navigateFromMyFragment4ToMyFragment3"
+            app:destination="@id/myFragment3" />
+        <argument
+            android:name="CENTER_TEXT"
+            app:argType="string" />
+    </fragment>
 </navigation>
