@@ -1,13 +1,16 @@
 package com.example.dymachap6
 
 import android.accessibilityservice.GestureDescription.StrokeDescription
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity(), FragmentTransactionHandler {
 
     lateinit var textView1: TextView
@@ -24,7 +27,37 @@ class MainActivity : AppCompatActivity(), FragmentTransactionHandler {
             }
         }
         this.addFragment1ToActivity()
+        this.displayAlertDialog()
+        this.displayToast()
     }
+
+    private fun displayAlertDialog() {
+        val customDialog = layoutInflater.inflate(R.layout.custom_dialog_alert, null)
+
+        val customTitle = customDialog.findViewById<TextView>(R.id.alert_dialog_title_tv)
+        customTitle.text = "Mon alerte custom"
+        val customMessage = customDialog.findViewById<TextView>(R.id.alert_dialog_message_tv)
+        customMessage.text = "Ceci est un message customisé d'alert pour démonstration"
+        val customPositiveAction = customDialog.findViewById<TextView>(R.id.positive_action_btn)
+        val customNegativeAction = customDialog.findViewById<TextView>(R.id.negative_action_btn)
+
+        AlertDialog.Builder(this)
+            .setView(customDialog)
+            .create()
+            .show()
+    }
+
+    private fun displayToast() {
+        //Toast.makeText(this, "Text", Toast.LENGTH_LONG).show()
+
+        val layout = layoutInflater.inflate(R.layout.custom_toast_layout, null)
+        val toastCustom = Toast(this)
+        toastCustom.duration = Toast.LENGTH_LONG
+        toastCustom.view = layout
+        toastCustom.show()
+    }
+
+
     private fun addFragment1ToActivity() {
         val fragmentManager = supportFragmentManager
 
