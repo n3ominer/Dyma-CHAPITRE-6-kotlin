@@ -2,4 +2,6 @@
     <string name="app_name">DymaChap6</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open_drawer_text">Open</string>
+    <string name="close_drawer_string">Close</string>
 </resources>

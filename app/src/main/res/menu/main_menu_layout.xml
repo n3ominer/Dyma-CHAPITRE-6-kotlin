@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/accueil"
+        android:icon="@drawable/baseline_home_24"
+        android:title="Accueil" />
+
+    <item
+        android:id="@+id/activity_2_item"
+        android:icon="@drawable/baseline_offline_share_24"
+        android:title="Activité 2" />
+
+    <item
+        android:id="@+id/messages_item"
+        android:icon="@drawable/baseline_message_24"
+        android:title="Messages" />
+
+
+    <item android:title="Profile">
+
+        <menu>
+
+            <item
+                android:id="@+id/profile_item"
+                android:icon="@drawable/baseline_person_outline_24"
+                android:title="Profil" />
+
+        </menu>
+    </item>
+
+    <item android:title="Communication">
+
+        <menu>
+
+            <item
+                android:id="@+id/share_app_item"
+                android:icon="@drawable/baseline_ios_share_24"
+                android:title="Partagez l'app"/>
+
+            <item
+                android:id="@+id/rate_app_item"
+                android:icon="@drawable/round_heart_broken_24"
+                android:title="Notez l'app"/>
+
+        </menu>
+
+    </item>
+
+</menu>
