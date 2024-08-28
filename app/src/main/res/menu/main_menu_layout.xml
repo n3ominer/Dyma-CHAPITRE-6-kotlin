@@ -9,6 +9,11 @@
         android:title="Accueil" />
 
     <item
+        android:id="@+id/nav_bar_activity"
+        android:icon="@drawable/baseline_navigation_24"
+        android:title="Navigation bar activivty" />
+
+    <item
         android:id="@+id/activity_2_item"
         android:icon="@drawable/baseline_offline_share_24"
         android:title="Activité 2" />

@@ -53,6 +53,13 @@ class MainActivity : AppCompatActivity(), FragmentTransactionHandler {
         navigationView.setNavigationItemSelectedListener {
 
             when(it.itemId) {
+                R.id.nav_bar_activity -> {
+                    Intent(this, BottomNavActivity::class.java).also {
+                        drawerLayout.closeDrawer(GravityCompat.START)
+                        startActivity(it)
+                    }
+                    Toast.makeText(this, "Bottom navigation activity", Toast.LENGTH_LONG).show()
+                }
                 R.id.accueil -> Toast.makeText(this, "Accueil", Toast.LENGTH_LONG).show()
                 R.id.profile_item -> Toast.makeText(this, "Profil", Toast.LENGTH_LONG).show()
                 R.id.messages_item -> Toast.makeText(this, "Messages", Toast.LENGTH_LONG).show()
