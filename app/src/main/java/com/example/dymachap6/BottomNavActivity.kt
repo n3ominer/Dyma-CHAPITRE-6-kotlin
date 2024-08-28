@@ -1,6 +1,7 @@
 package com.example.dymachap6
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -25,14 +26,25 @@ class BottomNavActivity : AppCompatActivity() {
         profileFragment = MyFragment2()
         activity2Fragment = MyFragment3()
 
-        this.initBottomNavigationView(initFragment = homeFragment)
+        bottomNav = findViewById(R.id.navigation_bar)
+
+        this.insertFragment(homeFragment)
+
+        bottomNav.setOnItemSelectedListener { item ->
+
+            when(item.itemId) {
+                R.id.nav_home -> this.insertFragment(homeFragment)
+                R.id.nav_activity -> this.insertFragment(activity2Fragment)
+                R.id.nav_profile -> this.insertFragment(profileFragment)
+            }
+
+            true
+        }
     }
 
-    private fun initBottomNavigationView(initFragment: Fragment) {
-        bottomNav = findViewById(R.id.navigation_bar)
+    private fun insertFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.nav_fragment_container_view, initFragment)
+        transaction.replace(R.id.nav_fragment_container_view, fragment)
         transaction.commit()
-
     }
 }
