@@ -58,7 +58,14 @@ class MainActivity : AppCompatActivity(), FragmentTransactionHandler {
                         drawerLayout.closeDrawer(GravityCompat.START)
                         startActivity(it)
                     }
-                    Toast.makeText(this, "Bottom navigation activity", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Bottom navigation activity", Toast.LENGTH_SHORT).show()
+                }
+                R.id.nav_tab_layout_activity -> {
+                    Intent(this, TabLayoutActivity::class.java).also {
+                        drawerLayout.closeDrawer(GravityCompat.START)
+                        startActivity(it)
+                    }
+                    Toast.makeText(this, "Tablayout activity", Toast.LENGTH_SHORT).show()
                 }
                 R.id.accueil -> Toast.makeText(this, "Accueil", Toast.LENGTH_LONG).show()
                 R.id.profile_item -> Toast.makeText(this, "Profil", Toast.LENGTH_LONG).show()

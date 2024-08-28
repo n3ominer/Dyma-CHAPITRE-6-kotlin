@@ -14,6 +14,11 @@
         android:title="Navigation bar activivty" />
 
     <item
+        android:id="@+id/nav_tab_layout_activity"
+        android:icon="@drawable/baseline_backup_table_24"
+        android:title="Tablayout Activity" />
+
+    <item
         android:id="@+id/activity_2_item"
         android:icon="@drawable/baseline_offline_share_24"
         android:title="Activité 2" />
